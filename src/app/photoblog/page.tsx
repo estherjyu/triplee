@@ -24,7 +24,7 @@ export default function Photoblog() {
           Photoblog
         </h1>
         <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-12">
-          A collection of moments captured.
+          some photos i like
         </p>
 
         <div className="grid gap-8">

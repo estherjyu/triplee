@@ -3,21 +3,35 @@ import Link from "next/link";
 const recommendations = [
   {
     id: 1,
-    category: "Books",
+    category: "youtube videos",
     items: [
       { name: "Add your first book recommendation", description: "" },
     ],
   },
   {
     id: 2,
-    category: "Movies",
+    category: "books",
     items: [
       { name: "Add your first movie recommendation", description: "" },
     ],
   },
   {
     id: 3,
-    category: "Music",
+    category: "movies",
+    items: [
+      { name: "Add your first music recommendation", description: "" },
+    ],
+  },
+  {
+    id: 4,
+    category: "music",
+    items: [
+      { name: "Add your first music recommendation", description: "" },
+    ],
+  },
+  {
+    id: 5,
+    category: "other",
     items: [
       { name: "Add your first music recommendation", description: "" },
     ],
@@ -39,7 +53,7 @@ export default function Recommendations() {
           Recommendations
         </h1>
         <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-12">
-          Things I enjoy and think you might too.
+          let's try critical thinking!
         </p>
 
         <div className="space-y-12">

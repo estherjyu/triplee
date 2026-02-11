@@ -17,11 +17,14 @@ export default function About() {
 
         <div className="prose dark:prose-invert">
           <p className="text-lg text-zinc-600 dark:text-zinc-400">
-            Welcome to my corner of the internet. This is where I share my photos and recommendations.
+          hey i'm esther👋
+
+          note: gen ai made 80% of the website for me 👍
+          technology is wonderful
           </p>
 
           <p className="text-lg text-zinc-600 dark:text-zinc-400 mt-4">
-            Add more about yourself here...
+            work in progress
           </p>
         </div>
       </div>
