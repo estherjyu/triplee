@@ -108,6 +108,29 @@ function PracticeSession() {
     );
   }
 
+  // Restart with same settings
+  function restart() {
+    setTimeLeft(duration);
+    setScore(0);
+    scoreRef.current = 0;
+    setInput("");
+    setStarted(false);
+    setFinished(false);
+    previousRef.current = undefined;
+    setProblem(generateProblem(tables, multipliers));
+  }
+
+  // Listen for Enter on results screen
+  useEffect(() => {
+    if (!finished) return;
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.key === "Enter") restart();
+    }
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [finished]);
+
   // Results screen
   if (finished) {
     return (
@@ -119,11 +142,14 @@ function PracticeSession() {
           <span className="text-xl text-zinc-500 dark:text-zinc-400">
             correct
           </span>
+          <span className="text-sm text-zinc-400 dark:text-zinc-500 mt-8">
+            press enter to restart
+          </span>
           <Link
             href="/tools/times-tables"
-            className="text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors mt-8"
+            className="text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
           >
-            try again
+            change settings
           </Link>
         </div>
       </div>
