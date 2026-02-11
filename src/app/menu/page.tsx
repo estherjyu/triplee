@@ -30,6 +30,12 @@ export default function Menu() {
           >
             recommendations
           </Link>
+          <Link
+            href="/tools"
+            className="text-xl text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors"
+          >
+            tools
+          </Link>
         </nav>
       </div>
     </div>
