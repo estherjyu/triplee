@@ -19,12 +19,10 @@ export default function About() {
           <p className="text-lg text-zinc-600 dark:text-zinc-400">
           hey i'm esther👋
 
-          note: gen ai made 80% of the website for me 👍
-          technology is wonderful
           </p>
 
           <p className="text-lg text-zinc-600 dark:text-zinc-400 mt-4">
-            work in progress
+            ts is a work in progress
           </p>
         </div>
       </div>
