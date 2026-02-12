@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 import { useCallback, useEffect, useRef, useState, Suspense } from "react";
 
 function generateProblem(
@@ -19,6 +19,7 @@ function generateProblem(
 
 function PracticeSession() {
   const searchParams = useSearchParams();
+  const router = useRouter();
   const duration = Number(searchParams.get("duration")) || 60;
   const tables = (searchParams.get("tables") || "")
     .split(",")
@@ -70,6 +71,15 @@ function PracticeSession() {
   useEffect(() => {
     inputRef.current?.focus();
   }, []);
+
+  // Escape key goes back to settings
+  useEffect(() => {
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") router.push("/tools/times-tables");
+    }
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [router]);
 
   // Check answer on input change
   function handleInput(value: string) {
